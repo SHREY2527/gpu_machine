@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gpu is on ideal position</h1>
+    <form action="{% url 'off_gpu' %}" >
+        <!-- {% csrf_token %} -->
+         <button type="submit">set the GPU to off position</button>
+         
+    <hr>
+    
+        <button type="submit" name='mybtn2'>set the GPU to running position</button>
+         </form>
+</body>
+</html>
