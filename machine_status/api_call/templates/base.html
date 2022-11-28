@@ -7,7 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-  <h1>okk</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="f_id">f_id</label><br>
+    <input type="text" id="f_id" name="f_id"><br>
+  </form>
+  <!-- <input type="submit" name="Save Changes" class="btn btn-success m-0" value="Save Changes"> -->
+     <a class="btn btn-primary mt-0" href="{% url 'gpu' %}" > submit </a>
     
 </body>
 </html>

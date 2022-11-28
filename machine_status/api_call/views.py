@@ -84,12 +84,6 @@ import requests
 
 
 
-# def show(request):
-#     stds = user.objects.all()
-#     context = {
-#         'std':stds
-#     }
-#     return render(request,'show.html',context)
 
 
 
@@ -104,43 +98,47 @@ import requests
     # text_content = 'This is an important message.'
 
 
-
+def id(request):
+    return render(request,"base.html")
 
 
 def GPU_status(request):
-    # if request.method == "POST":
+    # id = int(input)
+    if request.method == "POST":
+        id = request.POST.get("f_id")
         # id = Status.objects.get('S_id')
-        # if id == 3:
+        print("------")
+        if id == 3:
             plaintext = get_template('mail.txt')
             htmly= get_template('mail.html')
-                
+                    
             subject = 'GPU is on ideal position'
             text_content = plaintext.render()
             html_content = htmly.render()
             msg = EmailMultiAlternatives(subject, text_content,to =['shrey.kshatrainfotech@gmail.com'])
             msg.attach_alternative(html_content, "text/html")
             msg.send()
-            # request.META.get('https://mail.google.com/mail')
-            return HttpResponse("done")
+                # request.META.get('https://mail.google.com/mail')
+            return render(request,"index.html")
+        else:
+            return HttpResponse("succesfully submite it")
+    else:
+        print("--------")
+        return HttpResponse("shrey")
 
-# def off_gpu(request):
-    # url = 'https://mail.google.com/mail'        
-#     return requests.get(url).json()
+        # else:
+        #     return HttpResponse("ok")
+
+
 
 def off_gpu(request):
     print("---------------")
     
-    return redirect("machine_status/api_call/templates/base.html")
+    return HttpResponse("succesfully submite it")
 
 def running_gpu(request):
     return HttpResponse("succesfully submite it")
 
 
-# for call the function using button
-#  HTML FILE
-#    <button type="button" class="mybtn" href="{% url 'recognize_me'%}">Open 
-#     Camera</button> // THIS IS THE BUTTON TO BE CLICKED
 
-#  url.py
-#   from .import views
-#   path('/recognize', views.recognize, name='recognize_me')
+

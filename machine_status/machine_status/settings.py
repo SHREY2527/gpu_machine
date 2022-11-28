@@ -129,3 +129,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587' #or 587 or any others
 EMAIL_HOST_USER = 'shreysoni009@gmail.com' #Same as the sender email id 
 EMAIL_HOST_PASSWORD = 'vsvjotglfgdgdbyg'  #For exchange server pwd is not required
+
+GOOGLE_OAUTH2_CLIENT_SECRETS_JSON = 'client_secrets.json'
